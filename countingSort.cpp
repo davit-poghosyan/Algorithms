@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> countingSort(std::vector<int>& vec) {
+void countingSort(std::vector<int>& vec) {
     int max = vec[0];
     int size = vec.size();
 
@@ -28,14 +28,14 @@ std::vector<int> countingSort(std::vector<int>& vec) {
         --counting[vec[i]];
     }
 
-    return output;
+    vec = output;
 }
 
 int main() {
     std::vector<int> vec{2, 5, 3, 0, 2, 3, 0, 3};
-    std::vector<int> output = countingSort(vec);
+    countingSort(vec);
 
-    for (const auto& it : output) {
+    for (const auto& it : vec) {
         std::cout << it << " ";
     }
 
