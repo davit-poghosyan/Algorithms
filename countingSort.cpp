@@ -2,15 +2,6 @@
 #include <vector>
 
 void countingSort(std::vector<int>& vec) {
-    int max = vec[0];
-    int size = vec.size();
-
-    for (int i = 1; i < size; ++i) {
-        if (vec[i] > max) {
-            max = vec[i];
-        }
-    }
-
     std::vector<int> counting(max + 1, 0);
 
     for (int i = 0; i < size; ++i) {
